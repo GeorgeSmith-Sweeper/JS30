@@ -9,6 +9,8 @@ const ranges = player.querySelector('.player__slider');
 
 
 /* Build out functions*/
+
+// handles the play and pause of the video
 function togglePlay() {
   if(video.paused) {
     video.play();
@@ -17,4 +19,18 @@ function togglePlay() {
   }
 }
 
+// switches the play & pause buttons based on the event listener
+function updateButton() {
+  const icon = this.paused ? '►' : '❚ ❚';
+  toggle.textContent = icon;
+
+}
+
 /* Hook up the event listners*/
+// onClick, the video will begin playing
+video.addEventListener('click', togglePlay);
+video.addEventListener('play', updateButton);
+video.addEventListener('pause', updateButton);
+
+
+toggle.addEventListener('click', togglePlay);
