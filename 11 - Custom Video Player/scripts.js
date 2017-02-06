@@ -49,6 +49,7 @@ function scrub(e) {
 
 function fullScreen() {
   // fullscreen works!
+  // https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API
   video.webkitRequestFullscreen();
 }
 
