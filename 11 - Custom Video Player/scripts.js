@@ -9,6 +9,12 @@ const ranges = player.querySelector('.player__slider');
 
 
 /* Build out functions*/
-
+function togglePlay() {
+  if(video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+}
 
 /* Hook up the event listners*/
