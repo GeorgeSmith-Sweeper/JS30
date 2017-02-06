@@ -48,8 +48,8 @@ function scrub(e) {
 }
 
 function fullScreen() {
-  console.log('fullScreenBtn was clicked');
-  video.requestFullScreen();
+  // fullscreen works!
+  video.webkitRequestFullscreen();
 }
 
 
