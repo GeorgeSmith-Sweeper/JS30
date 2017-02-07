@@ -6,7 +6,23 @@
   <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
 </head>
 <body>
-<script>
-</script>
+  <script>
+    const pressed = [];
+    const secretCode = 'george';
+
+    window.addEventListener('keyup', (e) => {
+
+      // push each key press into an array
+      pressed.push(e.key);
+
+      // splice the length of the secretCode
+      pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+
+      // check to see if the joined string matches the secretCode string
+      if (pressed.join('').includes(secretCode)) {
+        console.log('we have the secret code!');
+      }
+    })
+  </script>
 </body>
 </html>
