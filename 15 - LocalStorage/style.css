@@ -58,11 +58,12 @@
       display: none;
     }
 
+    /* custom css to change the content box */
     .plates input + label:before {
       content: '⬜️';
       margin-right: 10px;
     }
-
+    /* switches the content box label when cchecked*/
     .plates input:checked + label:before {
       content: '🌮';
     }
