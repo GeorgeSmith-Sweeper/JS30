@@ -43,17 +43,22 @@
   <ul id="bands"></ul>
 
 <script>
-const bandUl = document.querySelector('#bands');
-
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 
-function addToList(bandsArr) {
-   bandsArr.forEach(band => {
-    return `<li>${band}</li>`;
-  })
-
-
+// replace all of the a ,the ,an  with nothing, and remove the whitespace
+function strip(bandName) {
+  return bandName.replace(/^a |the |an /i, '').trim();
 }
+
+// sort the bands after removing the articles
+// the strip function only works on each element and doesn't modify,
+// the original array
+const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
+
+// find the band ul
+// set the innerHTML to string of li's with the band names
+document.querySelector('#bands').innerHTML = sortedBands.map(band => `<li>${band}</li>`).join('');
+
 </script>
 
 </body>
