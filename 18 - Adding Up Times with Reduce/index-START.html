@@ -190,8 +190,14 @@
     .map(node => node.dataset.time)
     .map(timeCode => {
       const [mins, secs] = timeCode.split(':').map(parseFloat);
+      return (mins * 60) + secs;
       console.log(mins, secs);
     })
+    .reduce((total, seconds) => {
+      return total + seconds;
+    },0);
+
+    console.log(seconds);
 
 </script>
 </body>
