@@ -185,7 +185,7 @@
   // create an array with all of the times  from data-time
   const timeNodes = [...document.querySelectorAll('[data-time]')];
 
-  // displays the mins and seconds from the timeNodes
+  // displays the total seconds from the timeNodes
   const seconds = timeNodes
     .map(node => node.dataset.time)
     .map(timeCode => {
@@ -197,7 +197,15 @@
       return total + seconds;
     },0);
 
-    console.log(seconds);
+    let secondsLeft = seconds;
+    const hours = Math.floor(secondsLeft / 3600);
+
+    // how many seconds are left after everything has been divided
+    secondsLeft = secondsLeft % 3600;
+
+    const mins = Math.floor(secondsLeft / 60);
+    secondsLeft = secondsLeft % 60;
+    console.log(hours, mins, secondsLeft);
 
 </script>
 </body>
