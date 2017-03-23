@@ -182,6 +182,13 @@
     </li>
 
 <script>
+  // create an array with all of the times  from data-time
+  const timeNodes = [...document.querySelectorAll('[data-time]')];
+
+  // displays the mins and seconds from the timeNodes
+  const seconds = timeNodes.map(node => node.dataset.time);
+
+  console.log(seconds);
 </script>
 </body>
 </html>
