@@ -28,7 +28,18 @@
 
       p.textContent = transcript;
 
-      console.log(transcript);
+      // if the person has stopped talking,
+      // create another paragraph and append that to the DOM
+      if (e.results[0].isFinal) {
+        p = document.createElement('p');
+        words.appendChild(p);
+      }
+
+      // listens for cat  and does something.
+      // add function in the future!
+      if (transcript.includes('cat')) {
+        console.log('FLUFFY')
+      }
   })
 
   // when someone stops speaking, run the start function again
