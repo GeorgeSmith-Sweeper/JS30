@@ -57,8 +57,18 @@
     /*Compass: https://thenounproject.com/search/?q=compass&i=592352*/
   </style>
   <script>
-      const arrow = document.querySelector('.arrow');
-      const speed = document.querySelector('.speed-value');
+    const arrow = document.querySelector('.arrow');
+    const speed = document.querySelector('.speed-value');
+
+    navigator.geolocation.watchPosition((data) => {
+      // inserts the speed value in KM/H into the textContent
+      speed.textContent = data.coords.speed;
+      arrow.style.transform = `rotate(${data.coords.heading}deg)`;
+    }, (err => {
+      console.err(err);
+      alert("we need access to you geolocation!");
+    });
+
   </script>
 </body>
 </html>
