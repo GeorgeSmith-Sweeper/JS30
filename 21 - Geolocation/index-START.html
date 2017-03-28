@@ -64,9 +64,8 @@
       // inserts the speed value in KM/H into the textContent
       speed.textContent = data.coords.speed;
       arrow.style.transform = `rotate(${data.coords.heading}deg)`;
-    }, (err => {
-      console.err(err);
-      alert("we need access to you geolocation!");
+    }, (err) => {
+      console.error(err);
     });
 
   </script>
