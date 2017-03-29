@@ -33,7 +33,11 @@
 
 
     function highlightLink() {
-      console.log(this);
+      const linkCoords = this.getBoundingClientRect();
+      console.log(linkCoords);
+      highlight.style.width = `${linkCoords.width}px`;
+      highlight.style.height = `${linkCoords.height}px`;
+      highlight.style.transform = `translate(${linkCoords.right}px, ${linkCoords.left}px)`;
     }
 
     // add run highlightLink everytime the mouse enters a link
