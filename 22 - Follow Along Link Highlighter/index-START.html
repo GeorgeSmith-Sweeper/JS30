@@ -27,7 +27,18 @@
 
   <script>
     const triggers = document.querySelectorAll('a');
-    console.log(triggers);
+    const highlight = document.createElement('span');
+    highlight.classList.add('highlight');
+    document.body.append(highlight);
+
+
+    function highlightLink() {
+      console.log(this);
+    }
+
+    // add run highlightLink everytime the mouse enters a link
+    triggers.forEach(a => a.addEventListener('mouseenter', highlightLink));
+
   </script>
 </body>
 </html>
