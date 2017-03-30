@@ -45,10 +45,15 @@
       .map(voice => `<option value="${voice.name}">${voice.name}(${voice.lang})</option>`)
       .join('');
       voicesDropdown.innerHTML = voiceOptions;
+  }
 
+  // changes the voice object to what is selected in the dropdown
+  function setVoice() {
+    msg.voice = voices.find(voice => voice.name === this.value);
   }
 
   speechSynthesis.addEventListener('voiceschanged', populateVoices);
+  voicesDropdown.addEventListener('change', setVoice);
 </script>
 
 </body>
