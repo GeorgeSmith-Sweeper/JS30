@@ -35,6 +35,20 @@
   const options = document.querySelectorAll('[type="range"], [name="text"]');
   const speakButton = document.querySelector('#speak');
   const stopButton = document.querySelector('#stop');
+  msg.text = document.querySelector('[name="text"]').value;
+
+  // grabs all the possible built in voices from mac,
+  // formats them as options, and places them within the drop down
+  function populateVoices() {
+    voices = this.getVoices();
+    const voiceOptions = voices
+      .map(voice => `<option value="${voice.name}">${voice.name}(${voice.lang})</option>`)
+      .join('');
+      voicesDropdown.innerHTML = voiceOptions;
+
+  }
+
+  speechSynthesis.addEventListener('voiceschanged', populateVoices);
 </script>
 
 </body>
