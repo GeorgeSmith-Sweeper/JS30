@@ -50,10 +50,28 @@
   // changes the voice object to what is selected in the dropdown
   function setVoice() {
     msg.voice = voices.find(voice => voice.name === this.value);
+    toggle();
+  }
+
+  // can pass false to the toggle to disabable it
+  function toggle(startOver = true) {
+    speechSynthesis.cancel();
+    if(startOver) {
+      speechSynthesis.speak(msg);
+    }
+  }
+
+  // changes the rate and pitch of the voice thats speaking
+  function setOption() {
+    console.log(this.name, this.value);
+    msg[this.name] = this.value;
+    toggle();
   }
 
   speechSynthesis.addEventListener('voiceschanged', populateVoices);
   voicesDropdown.addEventListener('change', setVoice);
+  options.forEach(option => option.addEventListener('change', setOption));
+
 </script>
 
 </body>
