@@ -52,6 +52,10 @@ nav {
   z-index: 1;
 }
 
+/*
+  when the class 'fixed-nav' is added to the nav,
+  fix the position and add a shadow for depth
+ */
 .fixed-nav nav {
   position: fixed;
   box-shadow: 0 5px rgba(0,0,0,0.1)
