@@ -58,7 +58,9 @@
   const nav = document.querySelector('#main');
   const topOfNav = nav.offsetTop;
 
-
+  // if the scroll reaches the top of the nav,
+  // add the height of the nav as padding to the body,
+  // add the class of fixed-nav to the body
   function fixNav() {
     if (window.scrollY >= topOfNav) {
       document.body.style.paddingTop = `${nav.offsetHeight}px`;
