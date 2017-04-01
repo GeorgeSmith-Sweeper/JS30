@@ -54,11 +54,18 @@
   </div>
 
 <script>
+  // grab the navbar
   const nav = document.querySelector('#main');
+  const topOfNav = nav.offsetTop;
 
 
+  function fixNav() {
+    console.log(topOfNav, window.scrollY);
+    document.body.classList.add('fixed-nav')
+  }
 
-
+  // run the fixNav function everytimes the page scrolls
+  window.addEventListener('scroll', fixNav);
 </script>
 
 </body>
