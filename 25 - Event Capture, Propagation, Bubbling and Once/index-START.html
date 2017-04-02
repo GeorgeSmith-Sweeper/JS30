@@ -63,7 +63,13 @@
   once: true
  }));
 
-
+button.addEventListener('click', () => {
+  console.log('a CLICK!');
+}, {
+  // button can only ever be clicked once
+  // useful for store checkouts
+  once: true;
+});
 
 </script>
 </body>
