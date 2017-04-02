@@ -51,13 +51,12 @@
   // e.stopPropagation();
  }
 
-
  // setting the option for capture to true,
  // makes the logs happen on the capture down,
  // instead of the bubble up
-
  // 'once' option listens for the click,
  // and unbinds itself so that there are no future clicks
+
  divs.forEach(div => div.addEventListener('click', logText, {
   capture: false,
   once: true
