@@ -41,17 +41,30 @@
 <script>
  const divs = document.querySelectorAll('div');
 
+
+
  function logText(e) {
   console.log(this.classList.value);
+
+  // prevents the event from bubbling up,
+  // to the parent element
+  // e.stopPropagation();
  }
 
 
  // setting the option for capture to true,
  // makes the logs happen on the capture down,
  // instead of the bubble up
+
+ // 'once' option listens for the click,
+ // and unbinds itself so that there are no future clicks
  divs.forEach(div => div.addEventListener('click', logText, {
-  capture: true
+  capture: false,
+  once: true
  }));
+
+
+
 </script>
 </body>
 </html>
