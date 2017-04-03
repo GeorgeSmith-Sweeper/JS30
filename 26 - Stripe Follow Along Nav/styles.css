@@ -57,6 +57,10 @@
     display: none;
   }
 
+  /*
+    sets the trigger to display block before the opacity,
+    cannot set both at the same time
+  */
   .trigger-enter .dropdown {
     display: block;
   }

@@ -75,16 +75,20 @@
 
   const nav = document.querySelector('.top');
 
+  // going to add the class of trigger-enter,
+  // once the mouse has entered the li
   function handleEnter() {
-
+    this.classList.add('trigger-enter');
+    setTimeout(() => this.classList.add('trigger-enter-active'));
   }
 
   function handleLeave() {
-
+    this.classList.remove('trigger-enter', 'trigger-enter-active');
   }
 
-  triggers.forEach(trigger => triggers.addEventListener('mouseenter', handleEnter));
-  triggers.forEach(trigger => triggers.addEventListener('mouseleave', handleLeave));
+  // triggers when the mouse enters and leaves the li
+  triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
+  triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave));
 </script>
 
 </body>
