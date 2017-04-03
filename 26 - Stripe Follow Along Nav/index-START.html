@@ -76,10 +76,16 @@
   const nav = document.querySelector('.top');
 
   // going to add the class of trigger-enter,
-  // once the mouse has entered the li
+  // once the mouse has entered the li,
+  // will only add  trigger-enter-active if trigger enter is present
   function handleEnter() {
     this.classList.add('trigger-enter');
-    setTimeout(() => this.classList.add('trigger-enter-active'));
+    setTimeout(() => {
+      if(this.classList.contains('trigger-enter')) {
+        this.classList.add('trigger-enter-active')
+      }
+    }, 150);
+
     background.classList.add('open');
 
     const dropdown = this.querySelector('.dropdown');
@@ -88,15 +94,17 @@
 
     const coords = {
       height: dropdownCoords.height,
-      width: dropdownCoords.width
+      width: dropdownCoords.width,
+      top: dropdownCoords.top - navCoords.top,
+      left: dropdownCoords.left - navCoords.left
     };
 
     // the background div will resize based on the ,
     // width and height of the hovered li
     background.style.setProperty('width', `${coords.width}px`);
     background.style.setProperty('height', `${coords.height}px`);
-
-    console.log(coords);
+    background.style.setProperty('transform',
+                                 `translate(${coords.left}px, ${coords.top}px`);
   }
 
   function handleLeave() {
