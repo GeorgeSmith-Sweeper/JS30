@@ -66,7 +66,10 @@
     e.preventDefault();
 
     const xValue= e.pageX - slider.offsetLeft;
-    console.log({xValue, startX});
+
+    // how far have we deviated from the start point
+    const walk = xValue - startX;
+    slider.scrollLeft = scrollLeft - walk;
   });
 
 </script>
