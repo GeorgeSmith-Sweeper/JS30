@@ -21,7 +21,7 @@
   const bar = document.querySelector('.speed-bar');
   const video = document.querySelector('.flex');
 
-  speed.addEventListener('mousemove', function(e){
+  function playbackSpeed(e) {
 
     // distance from the top of the speed bar,
     // calculated as a percent
@@ -37,8 +37,9 @@
     bar.style.height = height;
     bar.textContent = playbackRate.toFixed(2) + 'x';
     video.playbackRate = playbackRate;
-  });
+  }
 
+  speed.addEventListener('mousemove', playbackSpeed);
 </script>
 </body>
 </html>
