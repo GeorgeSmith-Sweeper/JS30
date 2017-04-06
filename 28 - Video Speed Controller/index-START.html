@@ -19,7 +19,7 @@
   // assign page elements to consts
   const speed = document.querySelector('.speed');
   const bar = document.querySelector('.speed-bar');
-  const video = document.querySelector('flex');
+  const video = document.querySelector('.flex');
 
   speed.addEventListener('mousemove', function(e){
 
@@ -32,13 +32,11 @@
     const height = Math.round(percent * 100) +  '%';
     const playbackRate = percent * (max - min) + min;
 
-    // the css for the bar with match the calculated height
+    // the css for the bar with match the calculated height,
+    // and the playbackRate matches the displayed text
     bar.style.height = height;
     bar.textContent = playbackRate.toFixed(2) + 'x';
-
     video.playbackRate = playbackRate;
-    console.log(playbackRate);
-    console.log(height);
   });
 
 </script>
