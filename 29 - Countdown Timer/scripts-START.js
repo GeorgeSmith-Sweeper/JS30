@@ -26,8 +26,9 @@ function displayTimeLeft(seconds) {
   // extra from division
   const minutes = Math.floor(seconds / 60);
   const remainderSeconds = seconds % 60;
-  const display = `${minutes}:${remainderSeconds}`;
+  // ternary adds a zero as padding to the remaining time
+  const display = `${minutes}:${remainderSeconds < 10 ? '0' : '' }${remainderSeconds}`;
+  // displays the time
   timerDisplay.textContent = display;
-  console.log({minutes, remainderSeconds});
 }
 
