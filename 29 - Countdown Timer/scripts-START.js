@@ -1,4 +1,5 @@
 let countdown;
+const timerDisplay = document.querySelector('.display__time-left');
 
 function timer(seconds) {
   // figures out when the timer started,
@@ -25,6 +26,8 @@ function displayTimeLeft(seconds) {
   // extra from division
   const minutes = Math.floor(seconds / 60);
   const remainderSeconds = seconds % 60;
+  const display = `${minutes}:${remainderSeconds}`;
+  timerDisplay.textContent = display;
   console.log({minutes, remainderSeconds});
 }
 
