@@ -21,5 +21,10 @@ function timer(seconds) {
 
 
 function displayTimeLeft(seconds) {
-  console.log(seconds);
+  // Math.floor is required to get rid of the,
+  // extra from division
+  const minutes = Math.floor(seconds / 60);
+  const remainderSeconds = seconds % 60;
+  console.log({minutes, remainderSeconds});
 }
+
