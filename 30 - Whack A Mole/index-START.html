@@ -39,20 +39,20 @@
   let lastHole;
 
   // create random time function
-  function randTime(min, max) {
+  function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
   }
 
+  // picks a random hole location, and checks to see if that hole,
+  // was previously selected. If it was selected, it recursivly calls
+  // itself for a new hole
   function randomHole(holes) {
     const idx = Math.floor(Math.random() * holes.length);
     const hole = holes[idx];
-    console.log(hole);
     if (hole === lastHole) {
       console.log('this is the same hole as before!')
       return randomHole(holes); // recursion
     }
-    console.log(hole);
-
     lastHole = hole;
     return hole;
   }
