@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -36,6 +36,11 @@
   const holes = document.querySelectorAll('.hole');
   const scoreBoard = document.querySelector('.score');
   const moles = document.querySelectorAll('.mole');
+
+  // create random time function
+  function randTime(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+  }
 
 </script>
 </body>
