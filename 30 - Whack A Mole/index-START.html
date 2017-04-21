@@ -57,6 +57,20 @@
     return hole;
   }
 
+  // controls the animation of the moles
+  function peep() {
+    const time = randomTime(200, 1000);
+    const hole = randomHole(holes);
+    hole.classList.add('up');
+
+    // after the 'time' has elpased, remove the class
+    setTimeout(() => {
+      hole.classList.remove('up');
+    }, time);
+  }
+
+
+
 </script>
 </body>
 </html>
