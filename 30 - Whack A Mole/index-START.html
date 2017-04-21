@@ -38,7 +38,7 @@
   const moles = document.querySelectorAll('.mole');
   let lastHole;
   let timeUp = false;
-
+  let score = 0;
   // create random time function
   function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
@@ -76,13 +76,25 @@
   // sets timeUp to false,
   // game ends in 10 seconds
   function startGame() {
+    score = 0;
     scoreBoard.textContent = 0;
     timeUp = false;
     peep();
     setTimeout(() => timeUp = true, 10000)
   }
 
+  // watches for fake clicks,
+  // increases the score per mole hit
+  // updates the score
+  function bonk(e) {
+    console.log(e);
+    if(!e.isTrusted) return; // cheater!
+    score++;
+    this.classList.remove('up');
+    scoreBoard.textContent = score;
+  }
 
+  moles.forEach(mole => mole.addEventListener('click', bonk));
 
 </script>
 </body>
